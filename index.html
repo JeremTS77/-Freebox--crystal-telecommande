@@ -1,0 +1,70 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Freebox Télécommande</title>
+		<link rel="stylesheet" type="text/css" href="scripts/ui-bootstrap-csp.css"/>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
+	</head>
+	<body ng-app="Freebox" layout-align="center center" layout="column">
+		<div ng-controller='CommandCtrl as cmdctrl' style="/*background-color:rgba(52, 73, 94,0.9);color:white;*/">
+			<md-input-container>
+			<label style="/*color:white;*/">Numéro de télécommande</label>
+			<input ng-model="id" requiered style="/*color:white;*/"/>
+			</md-input-container>
+			<md-switch ng-init="switch=1" ng-model="switch" ng-true-value="'2'" ng-false-value="'1'" class="md-primary">
+			Controler Freebox TV {{ switch }}
+			</md-switch>
+			<md-switch ng-init="long=0" ng-model="long" ng-true-value="'true'" ng-false-value="'false'" class="md-primary">
+			Longue pression : {{ long }}
+			</md-switch>
+			<div style="width:100%">
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'power')" class="power" style="background:#c0392b;color:white;">On/Off</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '1')">1</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '2')">2</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '3')">3</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '4')">4</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '5')">5</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '6')">6</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '7')">7</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '8')">8</md-button>
+					<md-button ng-click="cmdctrl.button(switch, long, id, '9')">9</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'back')">back</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, '0')">0</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'swap')">swap</md-button>
+
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'help')">aide</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'home')">FREE</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'ok')">Ok</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'vol_inc')">Volume +</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'vol_dec')">Volume -</md-button>
+				</div>
+			</div>
+		</div>
+		<!-- build:js scripts/vendor.js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js"></script>
+		<!-- endbuild -->
+
+		<!-- build:js scripts/freebox.js -->
+		<script src="scripts/freebox.js"></script>
+		<script src="scripts/ui-bootstrap.min.js"></script>
+		<!-- endbuild -->
+	</body>
+</html>
