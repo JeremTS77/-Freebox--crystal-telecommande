@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="scripts/ui-bootstrap-csp.css"/>
 		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.css">
 	</head>
-	<body ng-app="Freebox" layout-align="center center" layout="column">
+	<body ng-app="Freebox" layout-align="center center" layout="column" style="margin-top:50px;">
 		<div ng-controller='CommandCtrl as cmdctrl' style="/*background-color:rgba(52, 73, 94,0.9);color:white;*/">
 			<md-input-container>
 			<label style="/*color:white;*/">Numéro de télécommande</label>
@@ -28,7 +28,7 @@
 				</div>
 				<div>
 					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'vol_dec')" class="duoltouch" style="margin-right:18%;">Volume -</md-button>
-					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'prgm_dev')" class="duortouch" style="margin-left:18%;">Chaîne -</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'prgm_dec')" class="duortouch" style="margin-left:18%;">Chaîne -</md-button>
 				</div>
 				<div>
 					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'up')" class="solotouch" style="margin-left:36%;">&#8593;</md-button>
@@ -40,6 +40,15 @@
 				</div>
 				<div>
 					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'down')"  class="solotouch" style="margin-left:36%;">&#8595;</md-button>
+				</div>
+				<div>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'home')"  class="solotouch" style="margin-left:36%;">free</md-button>
+				</div>
+				<div class="col-md-3">
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'red')" style="margin : 0px; padding:0px; background:red; color:red;">&#x25A2;</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'green')" style="margin : 0px; padding:0px; background:green; color:green;">&#x25A2;</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'yellow')" style="margin : 0px; padding:0px; background:yellow; color:yellow;">&#x25A2;</md-button>
+					<md-button ng-click="cmdctrl.button(switch, 'false', id, 'blue')" style="margin : 0px; padding:0px; background:blue; color:blue;">&#x25A2;</md-button>
 				</div>
 				<div>
 					<md-button ng-click="cmdctrl.button(switch, long, id, '1')">1</md-button>
